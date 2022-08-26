@@ -1,0 +1,13 @@
+syntax = "proto3";
+package app;
+
+import "proto/v1/dto/server-dto.proto";
+
+service ServerAppRpc {
+  rpc Boot (dto.BootReq) returns (dto.BootResp) {}
+  rpc Traffic (dto.TrafficReq) returns (dto.TrafficResp) {}
+  rpc Open (dto.OpenReq) returns (dto.OpenResp) {}
+  rpc Close (dto.CloseReq) returns (dto.CloseResp) {}
+  rpc Tick (dto.TickReq) returns (dto.TickResp) {}
+  rpc Shutdown (dto.ShutdownReq) returns (dto.ShutdownResp) {}
+}

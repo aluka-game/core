@@ -1,0 +1,62 @@
+syntax = "proto3";
+package dto;
+
+option go_package = "github.com/aluka-7/core/proto/v1/dto";
+
+message BootReq{
+
+}
+
+message BootResp{
+
+}
+
+message OpenReq{
+	// tcp连接fd
+	int64 fd = 1;
+	// 用户登录token
+	string token = 2;
+}
+
+message OpenResp{
+
+}
+
+message CloseReq{
+	// tcp连接fd
+	int64 fd = 1;
+}
+
+message CloseResp{
+
+}
+
+message TrafficReq{
+	// tcp连接fd
+	int64 fd = 1;
+	// 动作
+	string action = 2;
+	// 请求信息
+	string reqMsg = 3;
+}
+
+message TrafficResp{
+	// 响应信息
+	string respMsg = 1;
+}
+
+message TickReq{
+
+}
+
+message TickResp{
+
+}
+
+message ShutdownReq{
+
+}
+
+message ShutdownResp{
+
+}
