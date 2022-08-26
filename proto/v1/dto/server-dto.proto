@@ -12,8 +12,8 @@ message BootResp{
 }
 
 message OpenReq{
-	// tcp连接fd
-	int64 fd = 1;
+	// 客户端连接地址
+	int64 addr = 1;
 	// 用户登录token
 	string token = 2;
 }
@@ -23,8 +23,8 @@ message OpenResp{
 }
 
 message CloseReq{
-	// tcp连接fd
-	int64 fd = 1;
+	// 客户端连接地址
+	int64 addr = 1;
 }
 
 message CloseResp{
@@ -32,8 +32,8 @@ message CloseResp{
 }
 
 message TrafficReq{
-	// tcp连接fd
-	int64 fd = 1;
+	// 客户端连接地址
+	int64 addr = 1;
 	// 动作
 	string action = 2;
 	// 请求信息
@@ -41,8 +41,17 @@ message TrafficReq{
 }
 
 message TrafficResp{
+	// 广播信息
+	repeated TrafficBroadcastMsg broadcastMsg = 1;
 	// 响应信息
-	string respMsg = 1;
+	string respMsg = 2;
+}
+
+message TrafficBroadcastMsg{
+	// 广播地址
+	repeated string remoteAddr = 1;
+	// 广播消息
+	string broadcastMsg = 2;
 }
 
 message TickReq{
