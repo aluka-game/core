@@ -1,4 +1,4 @@
-module github.com/aluka-7/core
+module github.com/aluka-game/core
 
 go 1.18
 
