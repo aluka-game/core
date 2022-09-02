@@ -54,10 +54,12 @@ message TrafficResp{
 }
 
 message TrafficBroadcastMsg{
+	// 广播fd
+	repeated int64 fd = 1;
 	// 广播地址
-	repeated string remoteAddr = 1;
+	repeated string remoteAddr = 2;
 	// 广播消息
-	string broadcastMsg = 2;
+	string broadcastMsg = 3;
 }
 
 message TickReq{
